@@ -1,0 +1,49 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/chekis.css' %}">
+
+  <body>
+  <div class="bitis">
+      <a class="biti1">
+        Доставка
+      </a>
+      <a class="biti">
+        Самовывоз
+      </a>
+  </div>
+  <div class="txt">
+      <h1 class="h5">
+          Ввод данных
+      </h1>
+  </div>
+  <div class="inpts">
+	  <input class="inp" placeholder="Имя">
+      <input class="inp" placeholder="Фамилия">
+      <input class="inp" placeholder="Номер телефона">
+      <div class="gor">
+          <input  class="inpm1" placeholder="Улица">
+            <input class="inpm2" placeholder="Дом">
+                <input class="inpm3" placeholder="Квартира">
+      </div>
+            <input class="inp" placeholder="Комментарий">
+
+  </div>
+  <div class="e">
+        <img class="logo" src="{% static 'iamagess/logo.svg' %}"/>
+        <div class="r">
+		<b class="b">Кунарская 63</b>
+        </div>
+
+        <div class="r">
+		<b class="b"> 8 (912) 247 91 51</b>
+        </div>
+        <div class="r">
+		<b class="b">kura.urala@mail.ru</b>
+        </div>
+</div>
+  </body>
+{% endblock content %}
+
+
+ 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'store/main.html' %}
+
+{% load static %}
+{% block content %}
+
+<body>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/jijoaa.css' %}">
+
+
+    <div class="contenedor">
+        <div class="suelo"></div>
+        <div class="dino dino-corriendo"></div>
+
+        <div class="score">0</div>
+
+    </div>
+
+    <div class="game-over">GAME OVER</div>
+
+
+
+	<script type="text/javascript" src="{% static 'js/gameb.js' %}"></script>
+
+</body>
+{% endblock content %}

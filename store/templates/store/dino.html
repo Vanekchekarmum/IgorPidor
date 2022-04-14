@@ -1,0 +1,17 @@
+{% load static %}
+
+<head>
+  <script type="module" src="{% static 'js/lolkek.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<!--  <div id="stars"></div>-->
+  <div class="world" data-world>
+    <div class="score" data-score>0</div>
+    <div class="start-screen" data-start-screen>PLAY</div>
+    <img src="{% static 'images/ground.svg' %}" class="ground" data-ground>
+    <img src="{% static 'images/ground.svg' %}" class="ground" data-ground>
+    <img src="{% static 'images/topkek.png' %}" class="dino" data-dino>
+  </div>
+
+</body>

@@ -1,0 +1,80 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/as.css' %}">
+
+<body>
+    <div class="cont">
+        <div class="leftside">
+
+            <img class ="kurapng" src="{% static 'iamagess/koko.png' %}"/>
+
+        </div>
+        <div class="rightside">
+            <div class="yu">
+            <h1 class="textho">Cначала медленно,<n/> потом быстро”</h1>
+            <h5 class="textho1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</h5>
+    </div>
+        </div>
+
+    </div>
+  <div class="container">
+    <div class="heading">
+      <h1 class="textho2">Продукция</h1>
+        <h5 class="textho12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</h5>
+
+    </div>
+    <div class="row">
+{% for product in products %}
+		<div class="card" >
+          <img class="pimg" src="{{product.imageURL}}">
+        <div class="card-body">
+          <h4 class="p">
+{{product.name}}
+		  </h4>
+            <div class="div">
+                <a class="btns"><h4 class="fnt">Подробнее</h4></a>
+                <a data-product="{{product.id}}" data-action="add" class="btns1 add-btn update-cart"><h4 class="fnt1">Купить</h4></a>
+</div>
+<!--                <a href="#" class="btn">Read more</a>-->
+        </div>
+
+      </div>
+		{% endfor %}
+    </div>
+  </div>
+<div class="e">
+        <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
+        <div class="r">
+		<b class="b">Кунарская 63</b>
+        </div>
+
+        <div class="r">
+		<b class="b"> 8 (912) 247 91 51</b>
+        </div>
+        <div class="r">
+		<b class="b">kura.urala@mail.ru</b>
+        </div>
+</div>
+</body>
+{% endblock content %}
+
+
+<!--	<div class="row">-->
+<!--		{% for product in products %}-->
+<!--		<div class="product-box">-->
+<!--			<img  src="{{product.imageURL}}">-->
+<!--			<div class="box-element product">-->
+<!--				<h6><strong>{{product.name}}</strong></h6>-->
+<!--				<hr>-->
+
+<!--				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
+
+<!--				<a class="btn btn-outline-success" href="#">View</a>-->
+<!--				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--		{% endfor %}-->
+<!--	</div>-->
+
