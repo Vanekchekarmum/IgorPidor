@@ -4,7 +4,7 @@
 <head>
 	<title>Кура Урала</title>
     <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/wert.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -76,9 +76,9 @@
          <a class="active" href="{% url 'store' %}">О нас</a>
         </div>
 
-            <a href="{% url 'index' %}" ><img class ="game"  src="{% static 'iamagess/dio.svg' %}"/>
+            <a href="{% url 'index' %}" ><img class ="game"  src="{% static 'iamagessa/dio.svg' %}"/>
 </a>
-            <a href="{% url 'cart' %}" class="pol"><img id="cart-icon" class ="gamel" src="{% static 'iamagess/korz.svg' %}"/> </a>
+            <a href="{% url 'cart' %}" class="pol"><img id="cart-icon" class ="gamel" src="{% static 'iamagessa/orange.svg' %}"/> <p class="itemcart" id="cart-total">{{cartItems}}</p></a>
 <!--<p id="cart-total">{{cartItems}}</p>-->
 <!--          <a href="{% url 'cart' %}">-->
 <!--	    		<img  id="cart-icon" src="{% static 'iamagessa/cart.png' %}">-->

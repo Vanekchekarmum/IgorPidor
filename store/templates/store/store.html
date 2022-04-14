@@ -1,13 +1,13 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/as.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/ssass.css' %}">
 
 <body>
     <div class="cont">
         <div class="leftside">
 
-            <img class ="kurapng" src="{% static 'iamagess/koko.png' %}"/>
+            <img class ="kurapng" src="{% static 'iamagessa/biglogo.svg' %}"/>
 
         </div>
         <div class="rightside">
@@ -19,9 +19,15 @@
 
     </div>
   <div class="container">
+      <div class="cat">
+          <a class="cat1"><h3 class="war1">маринованная продукция</h3></a>
+          <a class="cat2"><h3 class="war2">сырая продукция</h3></a>
+
+      </div>
     <div class="heading">
       <h1 class="textho2">Продукция</h1>
-        <h5 class="textho12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</h5>
+        <a class="warning" ><h4 class="war">Для уточнение суммы и веса продукции после оформления заказа с вами свяжется наш диспетчер</h4></a>
+
 
     </div>
     <div class="row">
@@ -33,7 +39,7 @@
 {{product.name}}
 		  </h4>
             <div class="div">
-                <a class="btns"><h4 class="fnt">Подробнее</h4></a>
+                <a class="btns" href="{% url 'product' product.id %}"><h4 class="fnt">Подробнее</h4></a>
                 <a data-product="{{product.id}}" data-action="add" class="btns1 add-btn update-cart"><h4 class="fnt1">Купить</h4></a>
 </div>
 <!--                <a href="#" class="btn">Read more</a>-->

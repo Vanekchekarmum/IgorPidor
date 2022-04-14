@@ -1,0 +1,169 @@
+@font-face {
+	font-family: 'Nunito';
+	src: url(./nuniti/nunity.ttf);
+}
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+
+}
+body{
+  font-family: montserrat;
+
+}
+.pol{
+    position:relative;
+
+}
+.itemcart{
+
+color: black;
+    position: absolute;
+    left: 31px;
+    top: 22px;
+    width: 100%;
+
+}
+.inn{
+  position: absolute;
+  right: 0;
+  width: 8%;
+  padding:4%;
+
+}
+.circle {
+  background: #456BD9;
+  border: 0.1875em solid #0F1C3F;
+  border-radius: 50%;
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+  height: 5em;
+  width: 5em;
+    position: absolute;
+  right: 0;
+  width: 8%;
+  padding:4%;
+}
+.game{
+    width:96px;
+}
+.gamel{
+    width:46px;
+}
+nav{
+  display:flex;
+  background:#46315E;
+  width:100%;
+  height:100px;
+  justify-content:space-evenly;
+  align-content:center;
+  align-items:center;
+
+
+}
+.nav{
+  display:flex;
+  background:#46315E;
+  width:100%;
+  height:100px;
+  justify-content:space-evenly;
+  align-content:center;
+  align-items:center;
+
+
+}
+.textic{
+  display:flex;
+  justify-content:space-around;
+  padding:20px;
+  width:20%;
+
+
+}
+
+.logo{
+width:10%;
+padding-left:5%;
+
+}
+
+
+.active{
+    color:white;
+
+}
+
+
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: left;
+  line-height: 80px;
+  margin-left: 50px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+ .logo{
+  width:20%;
+
+
+  }
+.lolp{
+
+}
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: flex;
+  }
+  nav{
+    flex-direction:row-reverse;
+    justify-content: space-around;
+}
+.nav{
+    flex-direction: column;
+    height:40%;
+    width:50%;
+    background-color:#E9501E;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+}
+
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    top: 80px;
+    left: 100%;
+    text-align: center;
+    transition: all .5s;
+    lex-direction:row-reverse;
+
+  }
+  nav ul li{
+    display: flex;
+    margin: 50px 0;
+    line-height: 30px;
+    flex-direction:row-reverse;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}

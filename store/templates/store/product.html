@@ -1,0 +1,35 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+<div class="mains">
+
+	<div class="main">
+	<div class="back">
+        <div class="ere">
+			<img class="backs" src="{% static 'iamagessa/back.svg' %}"/>        </div>
+        <img class="prdimg" src="{{product.imageURL}}">
+	</div>
+
+
+
+		<div class="rightbox">
+			<div class="jopa">
+			<h3>{{product.name}}</h3>
+
+
+			<form method="POST" action="{% url 'product' product.id %}">
+				{% csrf_token %}
+
+			</form>
+
+			<h3>Price: ${{product.price}}</h3>
+			</div>
+			<div class="iop">
+			<a data-product="{{product.id}}" data-action="add" class="btns13 add-btn update-cart"><h3 class="fnt1">Купить</h3></a>
+				</div>
+		</div>
+</div>
+	</div>
+
+{% endblock content %}
