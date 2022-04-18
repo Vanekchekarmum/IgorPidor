@@ -1,13 +1,14 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/piro.css' %}">
+<body>
 <div class="mains">
 
 	<div class="main">
 	<div class="back">
         <div class="ere">
-			<img class="backs" src="{% static 'iamagessa/back.svg' %}"/>        </div>
+			<a href="{% url 'store' %}"><img class="backs" src="{% static 'iamagessa/back.svg' %}"/> </a>       </div>
         <img class="prdimg" src="{{product.imageURL}}">
 	</div>
 
@@ -15,21 +16,42 @@
 
 		<div class="rightbox">
 			<div class="jopa">
-			<h3>{{product.name}}</h3>
-
+			<h3>  {{product.name}}</h3>
 
 			<form method="POST" action="{% url 'product' product.id %}">
 				{% csrf_token %}
 
 			</form>
+				<h3> ~ 1000г</h3>
+			<h3> ~ {{product.price}}р</h3>
+<!--				<div class="sleep">-->
+<!--				<h5>Цена: {{product.compound}}р</h5>-->
+<!--					</div>-->
+							<h3>Состав:</h3>
 
-			<h3>Price: ${{product.price}}</h3>
+				<h4>&nbsp&nbsp&nbsp;мясо цыпленка, соль поваренная,<br> &nbsp&nbsp&nbsp;перец черный молотый, <br>&nbsp&nbsp майонез, кориандр молотый,&nbsp;<br> &nbsp&nbsp чеснок свежий.</h4>
+
 			</div>
 			<div class="iop">
-			<a data-product="{{product.id}}" data-action="add" class="btns13 add-btn update-cart"><h3 class="fnt1">Купить</h3></a>
+			<a data-product="{{product.id}}" data-action="add" class="btns13 add-btn update-cart"><h3 class="pop">Купить</h3></a>
 				</div>
 		</div>
 </div>
+
 	</div>
+	<div class="c">
+        <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
+        <div class="r">
+		<b class="b">Кунарская 63</b>
+        </div>
+
+        <div class="r">
+		<b class="b"> 8 (912) 247 91 51</b>
+        </div>
+        <div class="r">
+		<b class="b">kura.urala@mail.ru</b>
+        </div>
+</div>
+</body>
 
 {% endblock content %}

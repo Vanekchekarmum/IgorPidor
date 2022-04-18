@@ -17,10 +17,28 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 def index(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
 
-	context = {}
+	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/jega.html', context)
+def about(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	return render(request, 'store/about.html', context)
 def product(request, pk):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
 	product = Product.objects.get(id=pk)
 
 	if request.method == 'POST':
@@ -37,7 +55,7 @@ def product(request, pk):
 		orderItem.quantity=request.POST['quantity']
 		orderItem.save()
 
-	context = {'product':product}
+	context = {'product':product, 'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/product.html', context)
 
 def cart(request):
@@ -106,10 +124,12 @@ def processOrder(request):
 		ShippingAddress.objects.create(
 		customer=customer,
 		order=order,
-		address=data['shipping']['address'],
-		city=data['shipping']['city'],
-		state=data['shipping']['state'],
-		zipcode=data['shipping']['zipcode'],
+		street=data['shipping']['street'],
+		flat=data['shipping']['flat'],
+		home=data['shipping']['home'],
+		porch=data['shipping']['porch'],
+		comment=data['shipping']['comment'],
+
 		)
 
 

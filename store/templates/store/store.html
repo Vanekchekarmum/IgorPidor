@@ -1,9 +1,10 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/ssass.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/cat.css' %}">
 
 <body>
+
     <div class="cont">
         <div class="leftside">
 
@@ -12,16 +13,16 @@
         </div>
         <div class="rightside">
             <div class="yu">
-            <h1 class="textho">Cначала медленно,<n/> потом быстро”</h1>
-            <h5 class="textho1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</h5>
+            <h1 class="textho">Cначала ,быстро,<n/> потом медленно”</h1>
+            <h5 class="textho1">продукция для тех, кто хочет экономить свое время</h5>
     </div>
         </div>
 
     </div>
   <div class="container">
       <div class="cat">
-          <a class="cat1"><h3 class="war1">маринованная продукция</h3></a>
-          <a class="cat2"><h3 class="war2">сырая продукция</h3></a>
+          <a onClick="showHide('test1');" class="cat1"><h3 class="war1">маринованная</h3></a>
+          <a  onClick="showHide('test1');" class="cat2"><h3 class="war2">сырая</h3></a>
 
       </div>
     <div class="heading">
@@ -30,8 +31,9 @@
 
 
     </div>
-    <div class="row">
-{% for product in products %}
+    <div id="test1" class="row">
+        {% for product in products %}
+{% if product.category%}
 		<div class="card" >
           <img class="pimg" src="{{product.imageURL}}">
         <div class="card-body">
@@ -46,23 +48,51 @@
         </div>
 
       </div>
+        {% else %}
+        <div  class="card" >
+          <img class="pimg" src="{{product.imageURL}}">
+        <div class="card-body">
+          <h4 class="p">
+{{product.name}}
+		  </h4>
+            <div class="div">
+                <a class="btns" href="{% url 'product' product.id %}"><h4 class="fnt">Подробнее</h4></a>
+                <a data-product="{{product.id}}" data-action="add" class="btns1 add-btn update-cart"><h4 class="fnt1">Купить</h4></a>
+</div>
+<!--                <a href="#" class="btn">Read more</a>-->
+        </div>
+
+      </div>
+
+        {% endif %}
 		{% endfor %}
-    </div>
+
+
+</div>
   </div>
+
 <div class="e">
         <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
-        <div class="r">
+        <div class="q">
 		<b class="b">Кунарская 63</b>
         </div>
 
-        <div class="r">
+        <div class="q">
 		<b class="b"> 8 (912) 247 91 51</b>
         </div>
-        <div class="r">
+        <div class="q">
 		<b class="b">kura.urala@mail.ru</b>
         </div>
 </div>
 </body>
+<script type="text/javascript">
+    function showHide(someID){
+    var theEldisp = document.getElementById(someID);
+    theEldisp.style.flexWrap=(theEldisp.style.flexWrap == 'wrap-reverse')?'wrap':'wrap-reverse';
+
+    }
+
+</script>
 {% endblock content %}
 
 

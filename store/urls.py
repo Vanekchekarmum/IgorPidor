@@ -10,5 +10,6 @@ urlpatterns = [
 	path('process_order/', views.processOrder, name="process_order"),
 	path('index/', views.index, name="index"),
 	path('product/<str:pk>/', views.product, name="product"),
+	path('about/', views.about, name="about"),
 
 ]

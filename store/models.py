@@ -6,16 +6,19 @@ from django.contrib.auth.models import User
 class Customer(models.Model):
 	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
 	name = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200)
+	tel = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.name
+		template = 'Имя: {0.name} , Номер: {0.tel}'
+		return template.format(self)
 
 
 class Product(models.Model):
 	name = models.CharField(max_length=200)
 	price = models.DecimalField(max_digits=7, decimal_places=2)
 	digital = models.BooleanField(default=False,null=True, blank=True)
+	category = models.BooleanField(default=False,null=True, blank=True)
+	compound = models.CharField(max_length=200)
 	image = models.ImageField(null=True, blank=True)
 
 	def __str__(self):
@@ -32,12 +35,13 @@ class Product(models.Model):
 class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
 	date_ordered = models.DateTimeField(auto_now_add=True)
+
 	complete = models.BooleanField(default=False)
 	transaction_id = models.CharField(max_length=100, null=True)
 
 	def __str__(self):
 		return str(self.id)
-		
+
 	@property
 	def shipping(self):
 		shipping = False
@@ -51,13 +55,13 @@ class Order(models.Model):
 	def get_cart_total(self):
 		orderitems = self.orderitem_set.all()
 		total = sum([item.get_total for item in orderitems])
-		return total 
+		return total
 
 	@property
 	def get_cart_items(self):
 		orderitems = self.orderitem_set.all()
 		total = sum([item.quantity for item in orderitems])
-		return total 
+		return total
 
 class OrderItem(models.Model):
 	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
@@ -73,11 +77,13 @@ class OrderItem(models.Model):
 class ShippingAddress(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
 	order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
-	address = models.CharField(max_length=200, null=False)
-	city = models.CharField(max_length=200, null=False)
-	state = models.CharField(max_length=200, null=False)
-	zipcode = models.CharField(max_length=200, null=False)
-	date_added = models.DateTimeField(auto_now_add=True)
+	street = models.CharField(max_length=200, null=False)
+	home = models.CharField(max_length=200, null=False)
+	flat = models.CharField(max_length=200, null=False)
+	porch = models.CharField(max_length=200, null=False)
+	comment = models.CharField(max_length=400, null=False)
 
+	date_added = models.DateTimeField(auto_now_add=True)
+	products = models.ForeignKey(OrderItem, on_delete=models.SET_NULL, null=True)
 	def __str__(self):
-		return self.address
+		return self.street
