@@ -4,7 +4,7 @@
 <head>
 	<title>Кура Урала</title>
     <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/kopii.css' %}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -59,32 +59,39 @@
 
 	</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
 </head>
 <body>
 
     <nav>
-        <input type="checkbox" id="check">
 
-      <label  for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-           <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
+          <a href="{% url 'store' %}" class="ada"><img class="logo" src="{% static 'iamagessa/logo.svg' %}"/></a>
+                <input type="checkbox" id="check">
+
         <ul class="nav">
         <div class="textic">
         <a class="active" href="{% url 'store' %}">Главная</a>
          <a class="active" href="{% url 'about' %}">О нас</a>
+          <a class="active" href="{% url 'about' %}">Оптом</a>
+
         </div>
 
-            <a href="{% url 'index' %}" ><img class ="game"  src="{% static 'iamagessa/dio.svg' %}"/>
+            <a href="{% url 'index' %}" class="ur" ><img class ="game"  src="{% static 'iamagessa/dio.svg' %}"/>
 </a>
-            <a href="{% url 'cart' %}" class="pol"><img id="cart-icon" class ="gamel" src="{% static 'iamagessa/orange.svg' %}"/> <p class="itemcart" id="cart-total">{{cartItems}}</p></a>
+
+            <a href="https://wa.me/+79122479151" class="ur1"><img class ="game1"  src="{% static 'iamagessa/podd.svg' %}"/>
+</a>
 <!--<p id="cart-total">{{cartItems}}</p>-->
 <!--          <a href="{% url 'cart' %}">-->
 <!--	    		<img  id="cart-icon" src="{% static 'iamagessa/cart.png' %}">-->
 <!--          </a>-->
 <!--	    	<p id="cart-total">{{cartItems}}</p>-->
+                    <a href="{% url 'cart' %}" class="pol"><img id="cart-icon1" class ="gamel" src="{% static 'iamagessa/backet.svg' %}"/> <p class="itemcart" id="cart-total">{{cartItems}}</p></a>
+
             </ul>
+        <a href="{% url 'cart' %}" class="pol1"><img id="cart-icon" class ="gamel1" src="{% static 'iamagessa/backet.svg' %}"/> <p class="itemcart" id="cart-total">{{cartItems}}</p></a>
+      <label  for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
     </nav>
     <section>
         {% block content %}

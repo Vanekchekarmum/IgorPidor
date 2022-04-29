@@ -1,5 +1,124 @@
 *{
 }
+.huy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+       width: 30%;
+    justify-content: space-around;
+        margin-top: 3%
+}
+.logow{
+
+width:10%;
+}
+a{
+    color:white;
+    font-family:'NunitoBold';
+
+}
+
+.huy1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+       width: 30%;
+    justify-content: space-around;
+        margin-top: 3%
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #46315E;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #46315E;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #46315E;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.what{
+
+    font-family:'Nunito';
+    color:#46315E;
+}
+.what1{
+
+    font-family:'Nunito';
+    color:#46315E;
+}
+.cbox{
+
+    width: 30px;
+    height: 30px;
+}
+.col{
+    display:flex;
+    flex-direction: row;
+     justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.check{
+
+    display:flex;
+    flex-direction: row;
+
+}
+.check1{
+
+    display:flex;
+    flex-direction: row;
+
+}
 input {
     text-align: center;
 }
@@ -36,7 +155,14 @@ border-radius: 15px;
 .gor{
     display:flex;
     flex-direction:row;
-        justify-content: center;
+    justify-content: center;
+}
+.gor1{
+display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    align-items: center;
 }
 .inpm1{
 
@@ -115,7 +241,7 @@ padding: 20px;
 background: #46315E;
 
 border: 3px solid #46315E;
-border-radius: 30px;
+border-radius: 50px;
 text-align: center;
 }
 .biti1{
@@ -154,5 +280,21 @@ color:#fff;
 
 .e{
         flex-direction:column;
+}
+.huy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    justify-content: space-evenly;
+    margin-top: 3%;
+}
+.huy1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 3%;
 }
 }

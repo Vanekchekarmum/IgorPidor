@@ -1,9 +1,13 @@
 @font-face {
 	font-family: 'Nunito';
-	src: url(./nuniti/nunity.ttf);
+	src: url(./nuniti/nuniiity.ttf);
 }
 body{
     background-color:#fff;
+
+}
+.logow{
+    width:10%;
 
 }
 .r{
@@ -49,6 +53,7 @@ h5{
   justify-content: space-around;
   flex-flow: wrap;
   padding:10px;
+      margin-bottom: 2%;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -86,9 +91,21 @@ border-radius: 20px;
   margin-bottom:30px;
 
 }
+a{
+
+    font-weight: 700;
+    font-family:'NunitoBold';
+
+}
 .p{
+    font-weight: 700;
+    font-family:'NunitoBold';
 
 
+}
+.ff{
+    font-weight: 700;
+    font-family:'NunitoBold';
 }
 .container {
   clear:both;
@@ -108,10 +125,18 @@ border-radius: 20px;
 }
 .textho2{
     font-size: 45px;
-       font-family:'Nunito';
-        font-weight: regular;
-        color:#46315E;
-
+    font-family:'Nunito';
+    font-weight: 400;
+    color:#46315E;
+font-weight: 700;
+margin-bottom: 5%
+}
+.textho5{
+    font-size: 45px;
+    font-family:'Nunito';
+    font-weight: 400;
+    color:#46315E;
+font-weight: 700;
 }
 .heading3 {
   text-align: flex-start;
@@ -132,7 +157,7 @@ border-radius: 20px;
 .textbot{
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+align-items: center;
     float:right;
 
 }
@@ -142,10 +167,10 @@ border-radius: 20px;
 }
 .bbtn{
     background-color: #46315E;
-    width: auto;
+    width: 100%;
     height: 100%;
-    border-radius: 14px;
-    padding: 10px;
+    border-radius: 50px;
+    padding: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,7 +184,7 @@ border-radius: 20px;
     align-items: center;
 }
 .btns {
-font-family'Nunito';
+font-family'NunitoBold';
 color:#fff;
 align-items: flex-start;
 padding: 6px;
@@ -187,5 +212,41 @@ border-radius: 30px;
 
 .e{
         flex-direction:column;
+}
+
+
+.container {
+    clear: both;
+    width: 100%;
+    margin: 0;
+}
+.textho5 {
+
+    /* font-family: 'Nunito'; */
+    /* font-weight: 400; */
+    color: #46315E;
+    /* font-weight: 700; */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+}
+.textho2 {
+    /* font-size: 45px; */
+    /* font-family: 'Nunito'; */
+    /* font-weight: 400; */
+    color: #46315E;
+    /* font-weight: 700; */
+    /* margin-bottom: 5%; */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    /* line-height: 70px; */
+}
+h5 {
+    font-size: 25px;
+    font-family: 'Nunito';
+    color: #fff;
 }
 }

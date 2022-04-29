@@ -1,6 +1,24 @@
 @font-face {
 	font-family: 'Nunito';
+	src: url(./nuniti/Nunito-Regular.ttf);
+}
+@font-face {
+	font-family: 'NunitoBold';
 	src: url(./nuniti/nunity.ttf);
+}
+.ada{
+    margin-left:5%;
+
+
+}
+.gamel1{
+    display:none;
+
+}
+.pol1{
+    display:none;
+    position:relative;
+
 }
 *{
   padding: 0;
@@ -18,8 +36,8 @@ body{
 
 }
 .itemcart{
-
-color: black;
+font-family: 'NunitoBold';
+color: white;
     position: absolute;
     left: 31px;
     top: 22px;
@@ -48,7 +66,11 @@ color: black;
 .game{
     width:96px;
 }
+.game1{
+    width:96px;
+}
 .gamel{
+
     width:46px;
 }
 nav{
@@ -67,7 +89,7 @@ nav{
   background:#46315E;
   width:100%;
   height:100px;
-  justify-content:space-evenly;
+  justify-content:space-around;
   align-content:center;
   align-items:center;
 
@@ -83,14 +105,12 @@ nav{
 }
 
 .logo{
-width:10%;
-padding-left:5%;
-
+width:50%;
 }
-
 
 .active{
     color:white;
+    font-family:'NunitoBold';
 
 }
 
@@ -109,7 +129,7 @@ padding-left:5%;
 }
 @media (max-width: 952px){
  .logo{
-  width:20%;
+  width:40%;
 
 
   }
@@ -125,8 +145,7 @@ padding-left:5%;
     display: flex;
   }
   nav{
-    flex-direction:row-reverse;
-    justify-content: space-around;
+    flex-direction:row;
 }
 .nav{
     flex-direction: column;
@@ -135,7 +154,7 @@ padding-left:5%;
     background-color:#E9501E;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-
+    z-index: 33;
 }
 
   ul{
@@ -143,13 +162,21 @@ padding-left:5%;
     width: 100%;
     height: 100vh;
     background: #fff;
-    top: 80px;
+    top: 100px;
     left: 100%;
     text-align: center;
     transition: all .5s;
     lex-direction:row-reverse;
 
   }
+  .itemcart {
+    color: white;
+    position: absolute;
+    left: 31px;
+    top: 21px;
+    width: 100%;
+    font-family: 'NunitoBold';
+}
   nav ul li{
     display: flex;
     margin: 50px 0;
@@ -159,11 +186,47 @@ padding-left:5%;
   nav ul li a{
     font-size: 20px;
   }
-  a:hover,a.active{
-    background: none;
-    color: #0082e6;
-  }
+
   #check:checked ~ ul{
-    left: 0;
+   left: 50%;
   }
+  .textic {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+    flex-direction: column;
+    color: white;
+}
+.game{
+    display:none;
+}
+.ur{
+    display:none;
+
+}
+a.active{
+margin-top: 9%;
+    color:#fff;
+}
+.checkbtn{
+    margin-left: 0;
+    margin-right: 8%;
+}
+.pol1 {
+display:flex;
+    position: relative;
+    margin-right: 8%;
+}
+.gamel1{
+    display:flex;
+    width: 46px;
+}
+.gamel{
+    display:none;
+}
+.pol{
+    display:none;
+
+}
 }

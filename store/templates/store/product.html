@@ -1,7 +1,8 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/piro.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/verak.css' %}">
+
 <body>
 <div class="mains">
 
@@ -16,42 +17,107 @@
 
 		<div class="rightbox">
 			<div class="jopa">
-			<h3>  {{product.name}}</h3>
+			<h3 class="name">  {{product.name}}</h3>
 
-			<form method="POST" action="{% url 'product' product.id %}">
+			<form method="POST" action="{% url 'product' product.id %}" style="display:flex;">
 				{% csrf_token %}
 
 			</form>
 				<h3> ~ 1000г</h3>
-			<h3> ~ {{product.price}}р</h3>
-<!--				<div class="sleep">-->
-<!--				<h5>Цена: {{product.compound}}р</h5>-->
-<!--					</div>-->
+			<h3> ~ {{ product.price}}р</h3>
+
 							<h3>Состав:</h3>
-
-				<h4>&nbsp&nbsp&nbsp;мясо цыпленка, соль поваренная,<br> &nbsp&nbsp&nbsp;перец черный молотый, <br>&nbsp&nbsp майонез, кориандр молотый,&nbsp;<br> &nbsp&nbsp чеснок свежий.</h4>
-
+                <div class="compound">
+				<h4>{{product.compound }}</h4>
+                </div>
 			</div>
 			<div class="iop">
-			<a data-product="{{product.id}}" data-action="add" class="btns13 add-btn update-cart"><h3 class="pop">Купить</h3></a>
+			<a  data-product="{{product.id}}" data-action="add" class="btns13 add-btn update-cart"><h3 class="pop">Добавить в корзину</h3></a>
 				</div>
 		</div>
+
 </div>
 
 	</div>
+<div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <!-- comments -->
+
+
+      </div>
+    </div>
+    <div class="hueta">
+      <div class="card-body">
+        {% if new_comment %}
+        <div class="frt">
+
+            <h3>Спасибо что оставили отзыв!<h3>
+        </div>
+
+        {% else %}
+
+        <form method="post" id="post" action="{% url 'product' product.id %}" class="formik" >
+          <div class="opol">
+              <h3 class="hqd">Оставить отзыв:</h3>
+            {{ comment_form.as_p }}
+
+          </div>
+                          <div class="sub">
+              <button type="submit" class="btns134 btn-primary  btn-lg">Отправить</button>
+                </div>
+          {% csrf_token %}
+<!--          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>-->
+        </form>
+        {% endif %}
+      </div>
+         <div class="feed" >
+        {% for comment in comments %}
+             <div class="feedback">
+          <h4 class="ivan">
+            {{ comment.name }}
+          </h4>
+                           <h4>
+
+          {{ comment.body  }}
+                           </h4>
+        </div>
+        {% endfor %}
+              </div>
+    </div>
+  </div>
+</div>
+<!--	<div class="comment">-->
+<!--					{% for comment in comments %}-->
+
+<!--        <form method="post" style="margin-top: 1.3em;">-->
+<!--          {{ comment_form.as_p }}-->
+<!--          {% csrf_token %}-->
+<!--          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>-->
+<!--        </form>-->
+<!--	</div>-->
+<!--	<div class="feed">-->
+
+<!--		<div class="feedback">-->
+
+<!--			<h3> {{ comment.body}}</h3>-->
+
+<!--		</div>-->
+<!--						{% endfor %}-->
+
+<!--	</div>-->
+
 	<div class="c">
         <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
         <div class="r">
-		<b class="b">Кунарская 63</b>
+		<b class="b">Луганская 59к2ж</b>
         </div>
 
         <div class="r">
-		<b class="b"> 8 (912) 247 91 51</b>
+		<b class="b"> 8 (950) 207 55 11</b>
         </div>
         <div class="r">
-		<b class="b">kura.urala@mail.ru</b>
+		<b class="b">kura_urala@mail.ru</b>
         </div>
 </div>
 </body>
-
 {% endblock content %}

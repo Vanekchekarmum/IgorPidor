@@ -1,45 +1,51 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/dfg.css' %}">
-<!--	<div class="row">-->
-<!--		<div class="col-lg-12">-->
-<!--			<div class="box-element">-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/fefe.css' %}">
+<style>
+	.nonetext{
+		display:flex;
+		height:400px;
+		justify-content: center;
+    	align-items: center;
+	}
+	.ol{
+		font-family:'NunitoBold';
+		font-size: 36px;
+		    color:#46315E;
+	}
+	.pipi{
+		после заказа
 
-<!--				<a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Continue Shopping</a>-->
+		доставка
+		юрлица
 
-<!--				<br>-->
-<!--				<br>-->
-<!--				<table class="table">-->
-<!--					<tr>-->
-<!--						<th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>-->
-<!--						<th><h5>Total:<strong> ${{order.get_cart_total|floatformat:2}}</strong></h5></th>-->
-<!--						<th>-->
-<!--							<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>-->
-<!--						</th>-->
-<!--					</tr>-->
-<!--				</table>-->
 
-<!--			</div>-->
+	}
+	@media (max-width: 858px){
+		.nonetext{
+			height: 650px;;
+		}
+	}
 
-<!--			<br>-->
-<!--			<div class="box-element">-->
-<!--				<div class="cart-row">-->
-<!--					<div style="flex:2"></div>-->
-<!--					<div style="flex:2"><strong>Item</strong></div>-->
-<!--					<div style="flex:1"><strong>Price</strong></div>-->
-<!--					<div style="flex:1"><strong>Quantity</strong></div>-->
-<!--					<div style="flex:1"><strong>Total</strong></div>-->
-<!--				</div>-->
+</style>
 <body>
+	{% if order.get_cart_items == 0 %}
+		<div class="nonetext">
+			<div class="pipi">
+			<h1 class="ol">Корзина пуста</h1>
+				</div>
+		</div>
 <div class="container">
 
+	{% else %}
     <div class="heading">
-      <h1 class="textho2">Продукция</h1>
+      <h1 class="textho5">Корзина</h1>
 
     </div>
 <div class="row">
 				{% for item in items %}
+
 	<div class="card">
 		<div class="imgs">
 		<img data-product="{{item.product.id}}" data-action="removew"  src="{% static 'iamagessa/close.svg' %}" class="inner chg-quantity update-cart"/>
@@ -50,12 +56,12 @@
 		<h4 class="p">
 		{{item.product.name}}
 		</h4>
-				<h4 class="p">
-		{{item.product.price}}
+		<h4 class="p">
+		{{item.product.price}} р
 		</h4>
 		<div class="div">
 			<a data-product="{{item.product.id}}" data-action="add" class="btns chg-quantity update-cart">+</a>
-			<h4>{{item.quantity}} шт</h4>
+			<h4 class="ff">{{item.quantity}} шт</h4>
 			<a data-product="{{item.product.id}}" data-action="remove"  class="btns chg-quantity update-cart">-</a>
 
 		</div>
@@ -70,19 +76,20 @@
       		<h1 class="textho2">Сумма: {{order.get_cart_total|floatformat:1}} р</h1>
 	<a class="bbtn" href="{% url 'checkout' %}"><h5>Оформить заказ</h5></a>
 </div>
+		{% endif %}
 		</div>
 	</div>
 <div class="e">
-        <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
+        <img class="logow" src="{% static 'iamagessa/logo.svg' %}"/>
         <div class="r">
-		<b class="b">Кунарская 63</b>
+		<b class="b">Луганская 59к2ж</b>
         </div>
 
         <div class="r">
-		<b class="b"> 8 (912) 247 91 51</b>
+		<b class="b"> 8 (950) 207 55 11</b>
         </div>
         <div class="r">
-		<b class="b">kura.urala@mail.ru</b>
+		<b class="b">kura_urala@mail.ru</b>
         </div>
 </div>
 </body>

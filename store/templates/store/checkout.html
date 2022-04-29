@@ -1,18 +1,17 @@
-
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/endses.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/dododos.css' %}">
 
   <body>
-  <div class="bitis">
-      <a onClick="showHide('test1');" class="biti1">
-        Доставка
-      </a>
-      <a onClick="showHide('test1');" class="biti">
-        Самовывоз
-      </a>
-  </div>
+<!--  <div class="bitis">-->
+<!--      <a onClick="showHide('test1');" class="biti1">-->
+<!--        Доставка-->
+<!--      </a>-->
+<!--      <a onClick="showHide('test1');" class="biti">-->
+<!--        Самовывоз-->
+<!--      </a>-->
+<!--  </div>-->
   <div class="txt">
       <h1 class="h5">
           Ввод данных
@@ -20,10 +19,20 @@
   </div>
   <div class="inpts">
       <form id="form" class="form">
-	  <input required class="inp form-control" type="text" name="name" placeholder="Имя">
-      <input required class="inp form-control"  type="tel" name="tel"  placeholder="Номер телефона" >
 
-      <div id="test1" class="gor">
+	  <input required class="inp form-control" type="text" name="name" placeholder="Имя">
+
+      <input required class="inp form-control"  type="tel" name="tel"  placeholder="Номер телефона">
+              <div class="huy">
+              <h4 class="what">Доставка </h4>
+
+          <label class="switch">
+              <input type="checkbox" id="chkTest1" name="pickup" value="самовывоз">
+              <span class="slider round"></span>
+            </label>
+                 <h4 class="what1">Самовывоз  </h4>
+            </div>
+      <div id="pnlTest1"  class="gor">
 
 
           <input  class="inpm1" type="text" name="street" placeholder="Улица">
@@ -33,6 +42,34 @@
 
       </div>
             <input class="inp" type="text" name="comment" placeholder="Комментарий">
+
+          <div class="huy">
+              <h4 class="what">WhatsApp </h4>
+          <label class="switch">
+              <input type="checkbox" name="contacts" >
+              <span class="slider round"></span>
+            </label>
+              <h4 class="what1">Позвонить  </h4>
+
+          </div>
+                    <div class="huy1">
+              <h4 class="what">Текущее время</h4>
+
+          <label class="switch">
+              <input type="checkbox" id="chkTest" >
+              <span class="slider round"></span>
+            </label>
+              <h4 class="what1">Определенное<br> время </h4>
+
+            </div>
+          <div id="pnlTest" class="gor1">
+
+
+          <input  class="inp" type="date" name="date" >
+              <input class="inp"  type="time" name="time" >
+
+
+      </div>
             </form>
       			<div class="box-element hidden" id="payment-info">
 
@@ -43,27 +80,39 @@
 
   </div>
   <div class="e">
-        <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
+        <img class="logow" src="{% static 'iamagessa/logo.svg' %}"/>
         <div class="r">
-		<b class="b">Кунарская 63</b>
+		<b class="b">Луганская 59к2ж</b>
         </div>
 
         <div class="r">
-		<b class="b"> 8 (912) 247 91 51</b>
+		<b class="b"> 8 (950) 207 55 11</b>
         </div>
         <div class="r">
-		<b class="b">kura.urala@mail.ru</b>
+		<b class="b">kura_urala@mail.ru</b>
         </div>
 
 </div>
   </body>
 <script type="text/javascript">
-    function showHide(someID){
-    var theEldisp = document.getElementById(someID);
 
-    theEldisp.style.display=(theEldisp.style.display== 'none')?'flex':'none';
-
+function toggle1() {
+  var div = document.getElementById('pnlTest1');
+  if(this.checked)
+    div.style.display = 'none';
+  else
+    div.style.display = 'flex'
     }
+document.getElementById('chkTest1').onchange = toggle1;
+
+function toggle() {
+  var div = document.getElementById('pnlTest');
+  if(this.checked)
+    div.style.display = 'flex';
+  else
+    div.style.display = 'none'
+    }
+document.getElementById('chkTest').onchange = toggle;
 		var shipping = '{{order.shipping}}'
 		var total = '{{order.get_cart_total|floatformat:2}}'
 
@@ -109,6 +158,10 @@
 				'home':null,
 				'porch':null,
 				 'comment': null,
+				 'date':null,
+				 'time':null,
+				 'contacts':'null',
+				 'pickup':null
 			}
 
 			if (shipping != 'False'){
@@ -117,14 +170,15 @@
 		    	shippingInfo.home = form.home.value
 		    	shippingInfo.porch = form.porch.value
 		    	shippingInfo.comment = form.comment.value
-
+		    	shippingInfo.date = form.date.value
+		    	shippingInfo.time = form.time.value
+		    	shippingInfo.contacts = form.contacts.value
+		    	shippingInfo.pickup = form.pickup.value
 	    	}
-
 	    	if (user == 'AnonymousUser'){
 	    		userFormData.name = form.name.value
 	    		userFormData.tel = form.tel.value
 	    	}
-
 	    	console.log('Shipping Info:', shippingInfo)
 	    	console.log('User Info:', userFormData)
 
@@ -141,7 +195,7 @@
 	    	.then((response) => response.json())
 	    	.then((data) => {
 				console.log('Success:', data);
-				alert('Transaction completed');
+				alert('Скоро с вами свяжется наш диспетчер, ожидайте...');
 
 				cart = {}
 				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"

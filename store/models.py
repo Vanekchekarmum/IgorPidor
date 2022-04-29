@@ -1,25 +1,32 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 # Create your models here.
 
 class Customer(models.Model):
 	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
 	name = models.CharField(max_length=200, null=True)
 	tel = models.CharField(max_length=200)
-
+	def __str__(self):
+		return self.name
+	'''
 	def __str__(self):
 		template = 'Имя: {0.name} , Номер: {0.tel}'
 		return template.format(self)
+	'''
 
-
+class Category(models.Model):
+	name = models.CharField(max_length=100)
+	def __str__(self):
+		return self.name
 class Product(models.Model):
 	name = models.CharField(max_length=200)
 	price = models.DecimalField(max_digits=7, decimal_places=2)
-	digital = models.BooleanField(default=False,null=True, blank=True)
-	category = models.BooleanField(default=False,null=True, blank=True)
 	compound = models.CharField(max_length=200)
+	digital = models.BooleanField(default=False,null=True, blank=True)
+
+	category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
+
 
 	def __str__(self):
 		return self.name
@@ -81,9 +88,27 @@ class ShippingAddress(models.Model):
 	home = models.CharField(max_length=200, null=False)
 	flat = models.CharField(max_length=200, null=False)
 	porch = models.CharField(max_length=200, null=False)
-	comment = models.CharField(max_length=400, null=False)
-
+	comment = models.CharField(max_length=200, null=False)
+	date = models.CharField(null=True, max_length=80)
+	time = models.CharField( max_length=80)
+	contacts = models.CharField(max_length=80,blank=False, default='whatsapp' )
+	pickup=models.CharField(max_length=80, default='доставка')
 	date_added = models.DateTimeField(auto_now_add=True)
-	products = models.ForeignKey(OrderItem, on_delete=models.SET_NULL, null=True)
+	# products = models.ForeignKey(OrderItem, on_delete=models.SET_NULL, null=True)
+
 	def __str__(self):
-		return self.street
+		return str(self.id)
+class Comments(models.Model):
+	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, related_name='comments')
+	name = models.CharField(max_length=80)
+	tel = models.CharField(max_length=80)
+	body = models.TextField()
+	created_on = models.DateTimeField(auto_now_add=True)
+	active = models.BooleanField(default=False)
+	class Meta:
+		ordering = ['created_on']
+
+
+	def __str__(self):
+		return 'Comment {} by {}'.format(self.body, self.name)

@@ -1,0 +1,379 @@
+input[type="text"]
+{
+    font-family: 'Nunito';
+}
+textarea{
+    font-family: 'Nunito';
+}
+.name{
+    font-family:'NunitoBold';
+
+}
+.hueta{
+    display:flex;
+    flex-direction:column;
+
+}
+.ivan{
+    margin-bottom:1%;
+
+}
+.feedback{
+background: rgba(70, 49, 94, 0.2);
+  width:80%;
+
+    border-radius:20px;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom: 1%;
+    padding:1%;
+    word-wrap: break-word;
+
+}
+    .formik{
+        display:flex;
+                flex-direction:row;
+                justify-content: space-around;
+                    margin-bottom: 5%;
+
+
+width: 100%;
+    }
+    .card-body{
+        display:flex;
+        flex-direction:row;
+            align-items: center;
+    justify-content: center;
+
+    }
+    .compound{
+
+        width:100%;
+
+    }
+    h5{
+        color:#46315E;
+
+        font-family:'Nunito';
+    }
+    .sub{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+            align-items: flex-end;
+    }
+    .btns134{
+    font-size:25px;
+
+    color: #fff;
+    padding: 20%;
+        background: #46315E;
+    border: 1px solid #46315E;
+    border-radius: 50px;
+    text-align: center;
+    font-family:'Nunito';
+font-weight: 700;
+
+    }
+    .frt{
+text-align: center;
+    margin-bottom: 1%;
+        }
+    .hqd{
+
+
+    }
+    .myfield2{
+
+            height: 90px;
+    width: 60%;
+    align-items: center;
+    white-space: normal;
+    text-align: justify;
+    -moz-text-align-last: center; /* Firefox 12+ */
+    text-align-last: center;    border-radius: 25px;
+    border-color: #46315E;
+    border-width: 2px;
+    margin-top: 1%;
+
+    }
+            .myfield1{
+            height: 50px;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    border-color: #46315E;
+    border-width: 2px;
+    margin-top: 1%;
+        }
+        .myfield{
+
+    height: 50px;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+      border-color: #46315E;
+    border-width: 2px;
+    margin-top: 1%;
+
+        }
+        .opol{
+            display:flex;
+            flex-direction:column;
+            width: 50%;
+        }
+.feed{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items: center;
+        margin-bottom: 5%;
+}
+.backs{
+    width:20%;
+
+}
+.pop{
+    color:#fff;
+    font-size:25px;
+    font-family:'Nunito';
+
+
+}
+h4{
+        font-family:'Nunito';
+    color:#46315E;
+
+
+}
+.box-element {
+    display:flex;
+    flex-direction:row;
+
+
+}
+
+h3{
+    color:#46315E;
+    font-size:40px;
+    font-family:'Nunito';
+}
+h2{
+    color:white;
+}
+.jopa{
+    display:flex;
+    flex-direction: column;
+
+}
+.iop{
+    display:flex;
+    flex-direction: column;
+}
+.btns13{
+
+color: #fff;
+    padding: 2%;
+    background: #FF9300;
+    border: 1px solid #FF9300;
+    border-radius: 50px;
+    text-align: center;
+}
+.sleep{
+
+
+}
+
+.mains{
+    display:flex;
+    flex-direction: column;
+
+}
+.q{
+    display:flex;
+    flex-direction:column;
+
+}
+.c{
+        display:flex;
+        flex-direction:row;
+        background-color:#46315E;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+.b{
+    color:#fff;
+    font-family:'Nunito';
+}
+.ere{
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 5%;
+    padding-top: 5%
+
+}
+.active{
+     font-family:'NunitoBold';
+
+}
+.back{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+.prdimg{
+
+    width: 100%;
+    border-radius:30px;
+}
+.rightbox{
+
+    flex-direction: column;
+    display: flex;
+justify-content: space-around;
+padding-top: 5%;
+width: 20%;
+
+}
+@media screen and (max-width: 821px) {
+.c{
+
+        flex-direction:column;
+        margin-top: 6%
+}
+.main{
+        flex-direction: column;
+
+}
+.feedback {
+    background: rgba(70, 49, 94, 0.2);
+    width: 80%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+margin-top: 3%;
+    margin-bottom: 0%;
+    padding:5%;
+    word-wrap: break-word;
+}
+
+.rightbox {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    width: auto;
+    align-items: center;
+}
+.formik {
+    display: flex;
+    flex-direction: column;
+}
+    .myfield2{
+
+            height: 90px;
+    width: auto;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    border-color: #46315E;
+    border-width: 2px;
+    margin-top: 3%;
+    margin-left: 0%;
+
+        }
+            .myfield1{
+            height: 50px;
+    width: auto;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    border-color: #46315E;
+    border-width: 2px;
+    margin-top: 3%;
+    margin-left: 0%;
+        }
+        .myfield{
+
+    height: 50px;
+    width: auto;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+      border-color: #46315E;
+    border-width: 2px;
+    margin-top: 3%;
+    margin-left: 0%;
+
+        }
+.mains {
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+}
+.opol {
+    display: flex;
+    flex-direction: column;
+
+    padding:3%;
+
+}
+.sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width:auto;
+}
+.iop {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6%;
+}
+.name {
+    font-family: 'NunitoBold';
+    font-size: 35px;
+}
+h3 {
+    color: #46315E;
+    font-size: 20px;
+    font-family: 'Nunito';
+}
+.pop {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Nunito';
+}
+.btns134 {
+    font-size: 25px;
+    color: #fff;
+    padding: 5%;
+    background: #46315E;
+    border: 1px solid #46315E;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'Nunito';
+    font-weight: 700;
+}
+.hqd {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+}
+}

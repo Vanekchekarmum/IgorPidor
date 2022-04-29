@@ -1,21 +1,44 @@
+<td class="post">
+
+<a href="#" onclick="showStuff('answer1', 'text1', this); return false;">false</a>
+ <a href="#" onclick="showStuff1('answer2', this); return true;">True</a>
+
+<span id="answer1" style="display: none;">
+    <h1>false</h1>
+</span>
+<span id="answer2" style="display: none;">
+    <h1>True</h1>
+</span>
+
+<span id="text1">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</span>
+</td>
+<button id="btn1" type="button" style="background:red;" onClick="onClick()">Click me</button>
+<button id="btn2"  type="button" style="background:none;" onClick="onClick()">Click me</button>
+
+<p>Clicks: <a id="clicks">0</a></p>
+
 <script type="text/javascript">
-    function showHide(someID, someID2){
-    var theEldisp = document.getElementById(someID);
-     var theEldisp2 = document.getElementById(someID2);
+    function showStuff(id, text, btn) {
+    document.getElementById(id).style.display = 'block';
+    document.getElementById(text).style.display = 'none';
+    btn.style.display = 'block';
+}
+    function showStuff1(id, text, btn) {
+    document.getElementById(id).style.display = 'block';
+    document.getElementById(text).style.display = 'none';
+    btn.style.display = 'block';
+}
+var clicks = 0;
 
-    theEldisp.style.display=(theEldisp.style.display== 'none')?'block':'none';
-    theEldisp2.style.display=(theEldisp2.style.display== 'block')?'none':'none';
-
-    }
+function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = localStorage[clicks];
+  if(clicks % 2 == 0){
+        document.getElementById("btn1").style.background = 'red';
+        document.getElementById("btn2").style.background = 'none';
+  }else{
+         document.getElementById("btn1").style.background = 'none';
+        document.getElementById("btn2").style.background = 'red';
+  }
+};
 </script>
-
-<span onClick="showHide('test');">click here to toggle On and off</span>
-<span onClick="showHide(test1');">click here to toggle On and off</span>
-
-<hr>
-<div id="test" style='display:block'>
-your hiding div content.<br> your hiding div content.<br>
-</div>
-<div id="test1" style='display:none; background:red'>
-your hiding div content.<br> your hiding div content.<br>
-</div>

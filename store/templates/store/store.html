@@ -1,7 +1,7 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/cat.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/hh.css' %}">
 
 <body>
 
@@ -20,10 +20,20 @@
 
     </div>
   <div class="container">
-      <div class="cat">
-          <a onClick="showHide('test1');" class="cat1"><h3 class="war1">маринованная</h3></a>
-          <a  onClick="showHide('test1');" class="cat2"><h3 class="war2">сырая</h3></a>
+          <div class="cat">
+              {% for category in categories %}
 
+              <a href="{% url 'store' %}?category={{ category.name }}" class="cat1">{{ category.name }}</a>
+              {% endfor %}
+
+          </div>
+
+      <div>
+<!--          {% for categ in category%}-->
+<!--          <li>-->
+<!--              <a href="{% url 'store' %}?categ={{ categ.name }}">{{category.name}}</a>-->
+<!--          </li>-->
+<!--          {% endfor %}-->
       </div>
     <div class="heading">
       <h1 class="textho2">Продукция</h1>
@@ -33,7 +43,6 @@
     </div>
     <div id="test1" class="row">
         {% for product in products %}
-{% if product.category%}
 		<div class="card" >
           <img class="pimg" src="{{product.imageURL}}">
         <div class="card-body">
@@ -42,29 +51,13 @@
 		  </h4>
             <div class="div">
                 <a class="btns" href="{% url 'product' product.id %}"><h4 class="fnt">Подробнее</h4></a>
-                <a data-product="{{product.id}}" data-action="add" class="btns1 add-btn update-cart"><h4 class="fnt1">Купить</h4></a>
-</div>
-<!--                <a href="#" class="btn">Read more</a>-->
-        </div>
-
-      </div>
-        {% else %}
-        <div  class="card" >
-          <img class="pimg" src="{{product.imageURL}}">
-        <div class="card-body">
-          <h4 class="p">
-{{product.name}}
-		  </h4>
-            <div class="div">
-                <a class="btns" href="{% url 'product' product.id %}"><h4 class="fnt">Подробнее</h4></a>
-                <a data-product="{{product.id}}" data-action="add" class="btns1 add-btn update-cart"><h4 class="fnt1">Купить</h4></a>
+                <a data-product="{{product.id}}" data-action="add" class="btns1 add-btn update-cart"><h4 class="fnt1">Добавить</h4></a>
 </div>
 <!--                <a href="#" class="btn">Read more</a>-->
         </div>
 
       </div>
 
-        {% endif %}
 		{% endfor %}
 
 
@@ -72,16 +65,16 @@
   </div>
 
 <div class="e">
-        <img class="logo" src="{% static 'iamagessa/logo.svg' %}"/>
+        <img class="logow" src="{% static 'iamagessa/logo.svg' %}"/>
         <div class="q">
-		<b class="b">Кунарская 63</b>
+		<b class="b">Луганская 59к2ж</b>
         </div>
 
         <div class="q">
-		<b class="b"> 8 (912) 247 91 51</b>
+		<b class="b"> 8 (950) 207 55 11</b>
         </div>
         <div class="q">
-		<b class="b">kura.urala@mail.ru</b>
+		<b class="b">kura_urala@mail.ru</b>
         </div>
 </div>
 </body>
